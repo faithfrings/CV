@@ -1,12 +1,12 @@
 -- List of mentee names to underline (full names as they appear in citations)
 local mentee_names = {
-    {last = "Brar", first = "E."},
-    {last = "Evans", first = "M."}, 
-    {last = "Fraija", first = "N."},
-    {last = "Hwang", first = "Y."},
-    {last = "Fischer", first = "A."},
-    {last = "Qu", first = "C."},
-    {last = "Cleveland", first = "R."}
+    {last = "Weiss", first = "V."},
+    {last = "Amovic", first = "S."}, 
+    {last = "Maddox", first = "M."},
+    {last = "Prieto", first = "A."},
+    {last = "Dearth", first = "A."},
+    {last = "Koopman", first = "C."},
+    {last = "Greene", first = "A."}
 }
 
 function Block(el)
@@ -14,21 +14,21 @@ function Block(el)
         for k, _ in ipairs(el.content) do
 
             -- Original functionality: Make "Zhang, H." bold in citations
-            if el.content[k].t == "Str" and el.content[k].text == "Zhang," and
+            if el.content[k].t == "Str" and el.content[k].text == "Frings," and
                 el.content[k + 1].t == "Space" and el.content[k + 2].t == "Str" and
-                el.content[k + 2].text:find("^H.") then
+                el.content[k + 2].text:find("^F.") then
 
-                el.content[k] = pandoc.Strong {pandoc.Str("Zhang, H.")}
+                el.content[k] = pandoc.Strong {pandoc.Str("Frings, F.")}
                 -- add comma and space after Zhang, H.
                 el.content[k + 1] = pandoc.Str(", ")
                 table.remove(el.content, k + 2)
 
             -- For shared authorships: Make "Zhang*," bold in citations
-            elseif el.content[k].t == "Str" and el.content[k].text == "Zhang*," and
+            elseif el.content[k].t == "Str" and el.content[k].text == "Frings*," and
                 el.content[k + 1].t == "Space" and el.content[k + 2].t == "Str" and
-                el.content[k + 2].text:find("^H.") then
+                el.content[k + 2].text:find("^F.") then
 
-                el.content[k] = pandoc.Strong {pandoc.Str("Zhang*, H.")}
+                el.content[k] = pandoc.Strong {pandoc.Str("Frings*, F.")}
                 -- add comma and space after Zhang, H.
                 el.content[k + 1] = pandoc.Str(", ")
                 table.remove(el.content, k + 2)

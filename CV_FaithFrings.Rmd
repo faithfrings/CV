@@ -1,0 +1,456 @@
+---
+name: Faith
+surname: Frings
+position: "PhD Candidate"
+address: "105 Main St, Durham, NH 03824"
+www: faithfrings.github.io
+email: "Faith.Frings@unh.edu"
+#to get the orcid: 0000-0001-6087-0428
+googlescholar: QulnQpwAAAAJ&hl
+osf: nrtbk # currently vitae doesn't support osf in the yaml header, need to add \osf{nrtbk} in the .tex file manulaly
+github: faithfrings
+# twitter: \_HanZhang_
+#researchgate: Han_Zhang175
+headcolor: 414141 # use black color
+date: "`r format(Sys.time(), '%B %Y')`"
+csl: apa-cv.csl # change this if you want to use other citation styles
+output: 
+  vitae::awesomecv:
+      keep_tex: false
+      pandoc_args: ["--lua-filter=lua/names.lua", "--template=awesome-cv.tex"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae);library(tibble)
+#rmarkdown::pandoc_version()
+```
+
+# Education
+
+```{r}
+tribble(
+  ~ Degree,
+  ~ Advisor,
+  ~ Year,
+  ~ Institution,
+  #PhD
+  "Doctor of Philosophy, Integrative Biology",
+  "Advisor: Dr. Melissa Aikens | Dissertation: Building data literate biologists: Investigating student motivational dynamics in statistical programming across diverse biology courses",
+  "08/2022-present",
+  "University of New Hampshire",
+  #Master's
+  "Master of Science, Biology with a concentration in ecology and evolution",
+  "Advisor: Dr. Luanna Prevost | Thesis: Mixed-method analysis of undergraduate student interpretation of different phylogenetic tree styles",
+  "08/2020-08/2022",
+  "University of South Florida",
+  #Bachelor's
+  "Bachelor of Science, Marine Biology",
+  NA,
+  "08/2017-05/2020",
+  "University of South Florida",
+) %>%
+  detailed_entries(
+    with = Degree,
+    where = Year,
+    what = Institution,
+    why = Advisor
+  )
+```
+
+# Research Experience
+
+## Dissertation (2022 - present)
+Advised by Dr. Melissa Aikens
+```{r}
+
+research <- tribble(
+  ~What,
+  ~Duty,
+
+  "Characterizing student R programming motivation and engagement",
+  c(
+    "Conducted multilevel modeling to examine changes in students' motivation to learn R programming",
+    "Conducted path analysis to investigate relationships among students' R programming mindsets, task values, and effort on R programming tasks"
+  ),
+
+  "Examining student R programming motivation across course types",
+  c(
+    "Collected and analyzed open-response survey data to identify factors shaping students' motivation across R-integrated biology courses"
+  ),
+
+  "Exploring student motivation to learn data science in the field",
+  c(
+    "Collected and analyzed semi-structured interviews to identify factors shaping students' motivation to learn R programming in a field-based data science course"
+  ),
+
+  "Factors explaining student R programming resource use in biological research",
+  c(
+    "Collected and analyzed semi-structured interviews, participant observations, and surveys to examine how and why students select resources when programming in a biological research course"
+  )
+)
+research %>%
+  detailed_entries(
+    what = What,
+    why = Duty
+  )
+```
+
+## Thesis (2020 - 2022)
+Advised by Dr. Luanna Prevost
+```{r}
+research <- tribble(
+  ~What,
+  ~Duty,
+ "Examining student phylogenetic tree interpretations across tree styles",
+  c(
+    "Conducted thematic analysis, phi correlations, and Mann-Whitney U tests of open-response data to characterize undergraduate students' reasoning across different phylogenetic tree styles"))
+
+research %>%
+  detailed_entries(
+    what = What,
+    why = Duty
+  )
+```
+
+## Undergraduate Research (2019 - 2020)
+Advised by Dr. Luanna Prevost
+```{r}
+research <- tribble(
+  ~What,                                           
+  ~Duty,
+  "Student reasoning about food webs", c(
+    "Conducted thematic analysis and phi correlations of open-response data examining students' interpretations of food webs"
+  ))
+research %>%
+  detailed_entries(
+    what = What,
+    why = Duty
+  )
+```
+
+## Graduate Research Assistant
+
+```{r}
+research <- tribble(
+  ~When,       ~With,                                          ~What,                                           ~Duty,
+  "2022-2026", "Biology Education Research Group (BERG), UNH", "Community college transfer student persistence", c(
+    "Conducted semi-structured interviews and thematic analysis to investigate supports and barriers experienced by community college transfer students at a four-year institution"
+  ),
+
+  "2022-2026", "Biology Education Research Group (BERG), UNH", "Student graphical reasoning", c(
+    "Conducted thematic analysis of open-response data to characterize students' graphical reasoning"
+  ),
+
+  "2022", "Prevost Lab, USF", "Amgen biotechnology education project", c(
+    "Developed online instructional resources for biology educators through an Amgen Foundation-funded biotechnology education project"
+  )
+)
+
+research %>%
+  detailed_entries(
+    when = When,
+    with = With,
+    what = What,
+    why = Duty
+  )
+```
+
+# Teaching Experience
+
+## Primary Instructor
+
+```{r}
+tribble(
+  ~ Year,
+  ~ Name,
+  ~ Duty,
+  '06/2026',
+  "BIOSM 2350/MEFB 633: R by the Sea: Data Analysis in Marine Sciences",
+  "undergraduate, 1 summer term"
+) %>%
+  detailed_entries(where = Year,
+                   with = Name,
+                   what = Duty) 
+```
+
+## Graduate Teaching Assistant
+
+```{r}
+tribble(
+  ~ Year,
+  ~ Name,
+  ~ Duty,
+  '2023 - 2026',
+  "BIOL 706/806: Data Science for Life Sciences",
+  "Undergraduate/graduate, 4 semesters",
+  '2023 - 2026',
+  "BIOL 528: Applied Biostatistics ",
+  "Undergraduate, 4 semesters",
+  '2025',
+  "BIOSM 3290/MEFB 714: Field Animal Behavior",
+  "Undergraduate, 1 summer term",
+  '2024',
+  "BIOSM 4990/MEFB 751: Research in Biology",
+  "Undergraduate, 1 summer term",
+  '2024',
+  "BIOSM 1610/MEFB 674: Ecology & the Marine Environment",
+  "Undergraduate, 1 summer term",
+  "2022",
+  "BIOL 412: Introductory Biology Laboratory",
+  "Undergraduate, 1 semester",
+  '2022',
+  "BSC 2011: Biology II – Biological Diversity",
+  "Undergraduate, 1 semester",
+  '2020 - 2021',
+  "BSC 2011L: Biology II – Biological Diversity Laboratory",
+  "Undergraduate, 2 semesters",
+  '2021',
+  "BSC 1005: Biological Principles for Non-Majors",
+  "Undergraduate, 1 semester"
+) %>%
+  detailed_entries(where = Year,
+                   with = Name,
+                   what = Duty) 
+```
+
+## Workshops
+
+```{r}
+tribble(
+  ~ Year,
+  ~ Name,
+  ~ Duty,
+  '01/2026',
+  "R by the Sea - Japan. Advanced Institute for Marine Ecosystem Change (WPI-AIMEC), Tohoku University.",
+  "co-taught a five-day introductory r and statistics workshop"
+) %>%
+  detailed_entries(where = Year,
+                   with = Name,
+                   what = Duty) 
+```
+
+## Invited lectures
+
+```{r}
+bibliography_entries("bibs/invited_talks.bib")
+```
+
+## Invited facilitator
+
+```{r}
+tribble(
+  ~ Year,
+  ~ Name,
+  ~ Duty,
+  '2026',
+  "Professional Development in Evidence-Based Teaching Series (PDET)",
+  ""
+) %>%
+  detailed_entries(where = Year,
+                   with = Name,
+                   what = Duty) 
+```
+
+# Teaching Distinctions & Professional Development
+
+```{r}
+tribble(
+  ~ Year,
+  ~ Name,
+  ~ Duty,
+  '2025',
+  "UNH Graduate Student Excellence in Teaching Award",
+  "Recognition by the Department of Biological Sciences for teaching achievement",
+  '2019,22,25',
+  "Human Subjects Research Certificate",
+  "Web-based course modules on responsible conduct of human subjects research"
+) %>%
+  detailed_entries(where = Year,
+                   with = Name,
+                   what = Duty) 
+```
+
+# Journal Articles
+
+```{r}
+bibliography_entries("bibs/journal_articles.bib")
+```
+
+# Book Chapters 
+
+```{r}
+bibliography_entries("bibs/other.bib")
+```
+
+# Media
+
+```{r}
+bibliography_entries("bibs/media.bib")
+```
+
+
+# Presentations
+Underlined names indicate undergraduate research mentees.
+```{r}
+bibliography_entries("bibs/conference_presentations.bib")
+```
+
+# Research Mentoring
+
+## Undergraduate Mentees
+
+```{r}
+tribble(
+  ~ Year,
+  ~ What,
+  '2026',
+  "Ashley Greene",
+  '2025-2026',
+  "Carleigh Koopman",
+  '2025',
+  "Abigail Dearth",
+  '2025',
+  "Ava Prieto",
+  '2023-2024',
+  "Sara Amovic",
+  '2023-2025',
+  "MeiLing Maddox",
+  '2022 - 2023',
+  "Virginia Weiss"
+) %>%
+  detailed_entries(when = Year,
+                   what = What) 
+```
+
+# Awards & Fellowships
+```{r}
+tribble(
+  ~Year, ~Name, ~Institution, ~Supp, ~Amount,
+  '2025',
+  'Student Teaching Award Fellowship',
+  'UNH Graduate School, University of New Hampshire',
+  NA,
+  '$2000',
+  
+  '2024', 
+  'Bill Woods Graduate Student Poster Award',
+  'Society for the Advancment of Biology Education Research annual meeting', 
+  '',
+  '$500',
+  
+  '2024, 2025', 
+  'Travel Award', 
+  "Department of Biological Sciences, University of New Hampshire",
+  NA,
+  '$800',
+  
+  '2024, 2026', 
+  "Travel Award",
+  "UNH Graduate School, University of New Hampshire",
+  NA,
+  '$800',
+  
+  '2020-2021',
+  'S-STEM Scholarship',
+  "Integrative Biology Department, University of South Florida",
+  NA,
+  "$5,600"
+) %>% 
+  detailed_entries(
+    where = Year,
+    with = Name, 
+    what = Institution,
+    why = Supp,
+    when = Amount
+  ) 
+```
+
+
+# Grants in Support of Research
+
+```{r}
+tribble(
+  ~Year, ~Name, ~Institution, ~Supp, ~Amount,
+  '2025',
+  'Graduate Student Research Fund', 
+  'School of Marine Sciences and Ocean Enginnering, University of New Hampshire',
+  NA, 
+  '$998',
+)%>% 
+  detailed_entries(
+    where = Year,
+    with = Name, 
+    what = Institution,
+    why = Supp,
+    when = Amount
+  ) 
+```
+
+# Professional Service
+
+```{r}
+tribble(
+  ~ Year,
+  ~ Name,
+  ~ Duty,
+  '2023-present',
+  "UNH R Users Group Organizer",
+  "Organize and lead weekly R Users Group meetings",
+  '2025 - 2026',
+  "SABER Virtual Day Conference Committee",
+  "Co-developed and co-hosted the inaugural Virtual Day of the 16th SABER annual meeting",
+  '2025-2026',
+  "SABER Discipline-Based Education Research-Scholars in Training (DBER-SiT) Chair",
+  "Organized and delegated DBER-SiT committee projects",
+  "2024-2025",
+  "SABER DBER-SiT Chair-elect",
+  "Shadowed and assisted the Chair in their role",
+  '2023-2025',
+  "SABER DBER-SiT Funding Co-chair",
+  "Identified and disseminated funding sources for DBER-scholars in training",
+  '2023-2026',
+  "UNH Undergraduate Research Conference Poster Judge",
+  "Evaluated quality of research and design of undergraduate life sciences research posters",
+  '2022-2024',
+  "UNH DBS Graduate Student Committee",
+  "Co-founded the committee; organized graduate student seminar series; hosted outreach events"
+) %>%
+  detailed_entries(where = Year,
+                   what = Name,
+                   why = Duty) 
+```
+
+# Manuscripts Reviewed
+
+Tips, Tricks, and Techniques in the American Biology Teacher
+
+# Technical Skills
+
+- **Programming:** R (advanced)
+- **Quantitative methods:** Multilevel modeling, structural equation modeling
+- **Qualitative methods:** Thematic analysis, cross-case analysis, semi-structured interview protocol development, participant observation, open-response item development
+- **Reproducible research:** R Markdown, Quarto
+- **Version control:** Git/GitHub
+
+# References
+
+```{r}
+tribble(
+  ~ Name,
+  ~ Title,
+  ~ Contact,
+  'Melissa Aikens, Ph.D.',
+  "Department Associate Chair, Associate Professor of Biology Education; University of New Hampshire",
+  "Melissa.Aikens@unh.edu",
+  'Easton White, Ph.D.',
+  "Associate Professor, Department of Biological Sciences, Associate Director of Research, School of Marine Science and Ocean Engineering, University of New Hampshire",
+  "Easton.White@unh.edu",
+  'Luanna Prevost, Ph.D.',
+  "Tampa Campus Associate Chair, Associate Professor, Department of Integrative Biology, University of South Florida",
+  "prevost@usf.edu"
+) %>%
+  detailed_entries(where = Contact,
+                   with = Name,
+                   what = Title) 
+```
