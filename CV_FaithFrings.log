@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.9.1)  3 SEP 2026 08:40
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.9.1)  21 SEP 2026 08:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -927,10 +927,10 @@ Package rerunfilecheck Info: File `CV_FaithFrings.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 33390 strings out of 469707
- 687957 string characters out of 5465408
- 1264569 words of memory out of 5000000
- 61867 multiletter control sequences out of 15000+600000
+ 33392 strings out of 469707
+ 688012 string characters out of 5465408
+ 1264634 words of memory out of 5000000
+ 61869 multiletter control sequences out of 15000+600000
  631751 words of font info for 132 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  131i,11n,136p,552b,646s stack positions out of 10000i,1000n,20000p,200000b,200000s

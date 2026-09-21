@@ -336,7 +336,7 @@ tribble(
   '2024', 
   'Bill Woods Graduate Student Poster Award',
   'Society for the Advancment of Biology Education Research annual meeting', 
-  '',
+  NA,
   '$500',
   
   '2024, 2025', 
@@ -433,6 +433,10 @@ Tips, Tricks, and Techniques in the American Biology Teacher
 - **Reproducible research:** R Markdown, Quarto
 - **Version control:** Git/GitHub
 
+# Professional Society Memberships
+
+Society for the Advancement of Biology Education Research
+
 # References
 
 ```{r}
@@ -454,3 +458,6 @@ tribble(
                    with = Name,
                    what = Title) 
 ```
+
+
+
